@@ -1,4 +1,6 @@
-import React from 'react'
+// Todo.jsx
+import React from "react";
+import "./index.css"; // 追加
 
 const Todo = ({ todo, toggleTodo }) => {
   const handleTodoClick = () => {
@@ -6,13 +8,14 @@ const Todo = ({ todo, toggleTodo }) => {
   };
 
   return (
-    <div>
+    <div className={`todo-item ${todo.completed ? "completed" : ""}`}>
       <label>
-        <input 
-        type="checkbox" 
-        checked={todo.completed} 
-        readOnly 
-        onChange={handleTodoClick}
+        <input
+          type="checkbox"
+          checked={todo.completed}
+          readOnly
+          onChange={handleTodoClick}
+          className="todo-checkbox"
         />
       </label>
       {todo.name}
